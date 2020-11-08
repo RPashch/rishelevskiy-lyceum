@@ -9,7 +9,7 @@ public class array_for_2 {
 
         for (int i=0; i< array.length; i++)
         {
-            array[i] = random.nextInt(Integer.MAX_VALUE); //Заполнение массива
+            array[i] = random.nextInt(); //Заполнение массива
             System.out.println(array[i]);
         }
 
