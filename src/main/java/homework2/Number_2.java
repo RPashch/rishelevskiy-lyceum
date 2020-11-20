@@ -10,6 +10,7 @@ public class Number_2 {
             array[i] = (int) (Math.random() * 10);
             System.out.print(array[i] + " ");
         }
+
         while (is_sorted){
                 count = 0;
                 System.out.println("\n--------------------");

@@ -1,6 +1,6 @@
 package lesson2;
 
-public class Task1 {
+class F {
     public static void main(String[] args) {
 
         int x = 30;
