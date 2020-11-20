@@ -28,7 +28,6 @@ public class Main {
             System.out.printf("| %-13s|", user.firstName);
             System.out.printf(" %-12s|", user.lastName);
             System.out.printf(" %-4d|%n", user.age);
-
         }
 
         System.out.println("------------------------------------");
@@ -48,7 +47,7 @@ class User {
         firstName = f_Name;
         lastName = l_Name;
         age = a;
-    }src/main/java/homework3/Main.java
+    }
 
 //    User(String f_Name, String l_Name)
 //    {
