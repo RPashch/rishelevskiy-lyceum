@@ -6,6 +6,7 @@ public class Task3 {
             for (int i = d; i > 0; i--) {
                 System.out.print("*" + " ");
             }
+            System.out.println(" ");
         }
     }
 }
