@@ -28,15 +28,16 @@ public class Main {
 
         User nik = new User("Nikita", "Davydov", 15);
         UserGenerator userGen = new UserGenerator(NAMES, LAST_NAMES, 10, 17);
+        printTableHeader();
 
         for (int i = 0; i < 10; i++) {
 //            System.out.println(userGen.getRandomName());
 //            System.out.println(userGen.getRandomLastName());
 //            System.out.println(userGen.getAccessibleAge());
             User someUser = userGen.giveMeNextUser();
-            System.out.println(someUser);
+            System.out.println(someUser.toTable());
         }
-
+        printTableFooter();
 
 
 
@@ -102,5 +103,15 @@ public class Main {
          *      | Nikita         | Satyr      | 20  |
          *      | Anna           | Perederii  | 19  |
         */
+    }
+
+    private static void printTableHeader() {
+        System.out.println("-------------------------------------\n"
+                         + "| First Name     | Last Name  | Age |\n"
+                         + "-------------------------------------");
+    }
+
+    private static void printTableFooter() {
+        System.out.println("-------------------------------------");
     }
 }

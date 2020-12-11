@@ -39,5 +39,9 @@ public class User {
     public String toString() {
         return "I am " + firstName + ' ' + lastName + ' ' + age + " years old";
     }
+
+    public String toTable() {
+        return String.format("| %-15s| %-11s| %2d  |", firstName, lastName, age);
+    }
 }
 
