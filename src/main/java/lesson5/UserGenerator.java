@@ -1,32 +1,42 @@
 package lesson5;
 
+import java.util.Random;
+
 public class UserGenerator {
-    String Names [] = {"Nikita", "Dmitriy", "Yaroslav", "Rustam", "Eugesha", "Nikola", "Matvey", "Vadim", "Kevin", "Vladislav"};
-    String  LastName [] = {"Davydov", "Gorohov", "Yakimov", "Gadjiev", "Petrenko", "Bezsalov", "Minakov", "Danesi", "Ashmiakov", "Berezgnoy"};
+    private final String names[];
+    private final String lastNames[];
+    private Random random = new Random();
+    private int ageFrom;
+    private int ageTo;
 
-    public int accessibleAge;
-    public String lastName;
-    public String names;
+    public UserGenerator(String[] names, String[] lastNames, int ageFrom, int ageTo) {
+        this.names = names;
+        this.lastNames = lastNames;
+        this.ageFrom = ageFrom;
+        this.ageTo = ageTo;
+    }
 
-    public int AccessibleAge() {
-        int accessibleAge = (int)(14+(Math.random())*6);
+    public int getAccessibleAge() {
+        int accessibleAge = ageFrom + random.nextInt(ageTo - ageFrom);
         return accessibleAge;
     }
-    public String Names(){
-        int f = (int)((Math.random())*10);
-        String name = Names[f];
+
+    public String getRandomName() {
+        int i = random.nextInt(names.length);
+        String name = names[i];
         return name;
     }
-    public String LastName(){
-        int i = (int)((Math.random())*10);
-        String lastName = LastName[i];
+    public String getRandomLastName(){
+        int i = random.nextInt(lastNames.length);
+        String lastName = lastNames[i];
         return lastName;
     }
 
-    public UserGenerator(String name, String lastNames, int accessibleAge){
-        this.names = name;
-        this.lastName = lastNames;
-        this.accessibleAge = accessibleAge;
+    public User giveMeNextUser() {
+        String name = getRandomName();
+        String lastName = getRandomLastName();
+        int age = getAccessibleAge();
+        return new User(name, lastName, age);
     }
 
 

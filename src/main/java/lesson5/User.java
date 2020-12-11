@@ -35,8 +35,9 @@ public class User {
         return;
     }
 
-
-
-
+    @Override
+    public String toString() {
+        return "I am " + firstName + ' ' + lastName + ' ' + age + " years old";
+    }
 }
 

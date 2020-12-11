@@ -6,24 +6,36 @@ import java.util.Scanner;
 import java.util.Date;
 
 public class Main {
+
+    private static final String[] NAMES = {"Nikita", "Dmitriy", "Yaroslav", "Rustam", "Eugesha", "Nikola", "Matvey", "Vadim", "Kevin", "Vladislav"};
+    private static final String LAST_NAMES[] = {"Davydov", "Gorohov", "Yakimov", "Gadjiev", "Petrenko", "Bezsalov", "Minakov", "Danesi", "Ashmiakov", "Berezgnoy"};
+
     public static void main(String[] args) {
 
         SimpleDateFormat formatter;
         Date date = new Date();
         formatter = new SimpleDateFormat("yyyy");
         String output = formatter.format(date);
-        Integer output1 = Integer.valueOf(output) ;
+        Integer output1 = Integer.valueOf(output);
+        System.out.println("test git");
 
-        User person = new User("Nikita", "Davydov" , 15);
+        User person = new User("Nikita", "Davydov", 15);
         System.out.println("My name is " + person.firstName);
-        if(date.equals("Mon Jan 28 04:21:29 EET 2021") && person.age == 2020){
+        if (date.equals("Mon Jan 28 04:21:29 EET 2021") && person.age == 2020) {
             System.out.println("the program will not work correctly");
         }
         System.out.println("you were born in " + (output1 - person.age));
 
-        UserGenerator randperson = new UserGenerator("Nikita", "Davydov", 15);
-        System.out.println(randperson.names);
+        User nik = new User("Nikita", "Davydov", 15);
+        UserGenerator userGen = new UserGenerator(NAMES, LAST_NAMES, 10, 17);
 
+        for (int i = 0; i < 10; i++) {
+//            System.out.println(userGen.getRandomName());
+//            System.out.println(userGen.getRandomLastName());
+//            System.out.println(userGen.getAccessibleAge());
+            User someUser = userGen.giveMeNextUser();
+            System.out.println(someUser);
+        }
 
 
 
